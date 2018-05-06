@@ -90,6 +90,7 @@ module.exports = {
     // for React Native Web.
     extensions: ['.web.js', '.mjs', '.js', '.json', '.web.jsx', '.jsx'],
     alias: {
+      '@': path.resolve('src'),
       '@pg': path.resolve('src/Pages'),
       '@bt': path.resolve('src/Bootstrap'),
 

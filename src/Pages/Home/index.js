@@ -9,7 +9,7 @@ const Home = class Home extends Component {
   render () {
     return (
       <div>
-        Home page !
+        {this.props.actions.translate('global.app_name')}
         <button onClick={this.props.actions.loaderShow}>update value</button>
       </div>
     )

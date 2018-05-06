@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import propTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 export const AppContextTypes = {
-  data: propTypes.object,
-  actions: propTypes.object
+  data: PropTypes.object,
+  actions: PropTypes.object
 }
 
 export class AppWrapper extends Component {
@@ -23,7 +23,9 @@ export class AppWrapper extends Component {
       return {}
     } else {
       return Object.assign(...Object.keys(actions).map(actName => {
-        return {[actName]: actions[actName].bind(context)}
+        return {
+          [actName]: actions[actName].bind(context)
+        }
       }))
     }
   }

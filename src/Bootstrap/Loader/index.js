@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { withApp } from '@bt/Wrapper/AppWrapper'
 import styles from './styles.js'
 
@@ -24,21 +25,20 @@ export const loaderHide = function () {
   }))
 }
 
-export const _Loader = ({loader, message}) => {
-  return (
-    <styles.main loader={loader}>
-      <styles.content>
-        <styles.message>
-          {message}
-        </styles.message>
-      </styles.content>
-    </styles.main>
-  )
-}
+export const _Loader = ({loader, message}) => (
+  <styles.main loader={loader}>
+    <styles.content>
+      <styles.message>
+        {message}
+      </styles.message>
+    </styles.content>
+  </styles.main>
+)
 
 const Loader = props => <_Loader
   loader={props.data.loader}
   message='loader'
 />
+
 
 export default withApp(Loader)
