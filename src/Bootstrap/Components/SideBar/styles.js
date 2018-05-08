@@ -80,6 +80,7 @@ export const ItemCSS = {
     flex-wrap: nowrap;
     align-items: center;
     padding: 5px 0;
+    cursor: pointer;
   `,
   divider: styled.li`
     width: 100%;
@@ -92,12 +93,17 @@ export const ItemCSS = {
     min-width: 60px;
     height: 60px;
     min-height: 60px;
-    border: 2px solid white;
+    border: 2px solid transparent;
     border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('${props => props.srcIcon ? props.srcIcon : ''}');
+    cursor: pointer;
   `,
   label: styled.label`
     padding: 0 10px;
     display: ${props => !props.onlyIcon ? 'none' : 'block'};
+    cursor: pointer;
   `
 }
 

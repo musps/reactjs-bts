@@ -35,17 +35,17 @@ export const ItemDivider = () => (
   <ItemCSS.divider></ItemCSS.divider>
 )
 
-export const Item = ({icon, label, onlyIcon}) => (
+export const Item = ({icon, label, onlyIcon, srcIcon}) => (
   <ItemCSS.main>
-    <ItemCSS.icon></ItemCSS.icon>
+    <ItemCSS.icon srcIcon={srcIcon}></ItemCSS.icon>
     <ItemCSS.label onlyIcon={onlyIcon}>{label}</ItemCSS.label>
   </ItemCSS.main>
 )
 
-export const ItemUserInfo = ({fullname, addr, addrValue, onlyIcon}) => (
+export const ItemUserInfo = ({fullname, addr, addrValue, onlyIcon, srcIcon}) => (
   <ItemListCSS.main>
     <ItemCSS.main>
-      <ItemCSS.icon></ItemCSS.icon>
+      <ItemCSS.icon srcIcon={srcIcon}></ItemCSS.icon>
       <ItemUserInfoCSS.main onlyIcon={onlyIcon}>
         <ItemUserInfoCSS.fullname>
           {fullname}
