@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withApp } from '@bt/Wrapper/AppWrapper'
+import { withApp } from '@bt/Wrappers/AppWrapper'
 
 const Home = class Home extends Component {
   constructor(props) {

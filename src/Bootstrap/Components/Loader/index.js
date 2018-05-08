@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { withApp } from '@bt/Wrapper/AppWrapper'
-import styles from './styles.js'
+import { withApp } from '@bt/Wrappers/AppWrapper'
+import styles from './styles'
 
 export const loaderShow = function () {
   this.setState(prevState => ({
