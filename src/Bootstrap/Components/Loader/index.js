@@ -40,5 +40,4 @@ const Loader = props => <_Loader
   message='loader'
 />
 
-
 export default withApp(Loader)

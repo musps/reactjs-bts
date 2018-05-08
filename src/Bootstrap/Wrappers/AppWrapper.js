@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 export const AppContextTypes = {
@@ -16,13 +16,15 @@ export class AppWrapper extends Component {
 
   constructor(props) {
     super(props)
+    this.updateData = this.updateData.bind(this)
+    this.state.actions.updateData = this.updateData
   }
 
   useContextForAct(actions, context) {
     if (typeof actions === 'undefined' || Object.keys(actions).length === 0) {
-      return {}
+      return this.state.actions
     } else {
-      return Object.assign(...Object.keys(actions).map(actName => {
+      return Object.assign(this.state.actions, ...Object.keys(actions).map(actName => {
         return {
           [actName]: actions[actName].bind(context)
         }
@@ -44,6 +46,15 @@ export class AppWrapper extends Component {
     }
   }
 
+  updateData(key, value) {
+    this.setState(prevState => ({
+      data: {
+        ...prevState.data,
+        [key]: value
+      }
+    }))
+  }
+
   render() {
     return this.props.children
   }
@@ -54,6 +65,6 @@ export const withApp = Comp => {
     <Comp data={data} actions={actions} {...props} />
   )
 
-  Wrapper.contextTypes = AppContextTypes;
-  return Wrapper;
+  Wrapper.contextTypes = AppContextTypes
+  return Wrapper
 }

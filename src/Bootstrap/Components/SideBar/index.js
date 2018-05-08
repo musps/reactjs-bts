@@ -1,8 +1,13 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import styles, { HandlerButtonCSS, ItemListCSS } from './styles'
+import styles, { 
+  HandlerButtonCSS,
+  ItemListCSS,
+  ItemCSS,
+  ItemUserInfoCSS
+} from './styles'
 
-const HandlerButton = ({open, close, current, onClick}) => {
+export const HandlerButton = ({open, close, current, onClick}) => {
   const _current = current === true ? close : open;
 
   return (
@@ -14,13 +19,47 @@ const HandlerButton = ({open, close, current, onClick}) => {
   )
 }
 
-const ItemList = ({title}) => {
-  return (
-    <ItemListCSS.main>
-      <ItemListCSS.title>{title}</ItemListCSS.title>
-    </ItemListCSS.main>
-  )
-}
+export const ItemList = ({children, flexGrow}) => (
+  <ItemListCSS.main flexGrow={flexGrow}>
+    {children}
+  </ItemListCSS.main>
+)
+
+export const ItemTitle = ({title, hideTitle}) => (
+  <ItemListCSS.title hideTitle={hideTitle}>
+    {title}
+  </ItemListCSS.title>
+)
+
+export const ItemDivider = () => (
+  <ItemCSS.divider></ItemCSS.divider>
+)
+
+export const Item = ({icon, label, onlyIcon}) => (
+  <ItemCSS.main>
+    <ItemCSS.icon></ItemCSS.icon>
+    <ItemCSS.label onlyIcon={onlyIcon}>{label}</ItemCSS.label>
+  </ItemCSS.main>
+)
+
+export const ItemUserInfo = ({fullname, addr, addrValue, onlyIcon}) => (
+  <ItemListCSS.main>
+    <ItemCSS.main>
+      <ItemCSS.icon></ItemCSS.icon>
+      <ItemUserInfoCSS.main onlyIcon={onlyIcon}>
+        <ItemUserInfoCSS.fullname>
+          {fullname}
+        </ItemUserInfoCSS.fullname>
+        <ItemUserInfoCSS.addr>
+          {addr}
+        </ItemUserInfoCSS.addr>
+        <ItemUserInfoCSS.addrValue>
+          {addrValue}
+        </ItemUserInfoCSS.addrValue>
+      </ItemUserInfoCSS.main>
+    </ItemCSS.main>
+  </ItemListCSS.main>
+)
 
 const SideBar = class SideBar extends Component {
   state = {
@@ -29,7 +68,14 @@ const SideBar = class SideBar extends Component {
 
   constructor(props) {
     super(props)
+    this.state.current = props.current
     this.onClick = this.onClick.bind(this)
+  }
+
+  componentWillReceiveProps (newProps) {
+    this.setState({
+      current: newProps.current
+    })
   }
 
   onClick() {
@@ -39,17 +85,19 @@ const SideBar = class SideBar extends Component {
   }
 
   render() {
+    const {current} = this.state
+
     return (
-      <styles.main current={this.state.current}>
+      <styles.main current={current}>
         <HandlerButton 
-          open={'ouvrir'} 
-          close={'fermer'} 
-          current={this.state.current}
-          onClick={this.onClick}
+          open={this.props.open} 
+          close={this.props.close} 
+          current={current}
+          onClick={this.props.onClick}
         />
-
-        <ItemList title={'title'} />
-
+        <styles.content>
+          {this.props.children}
+        </styles.content>
       </styles.main>
     )
   }

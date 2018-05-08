@@ -18,7 +18,6 @@ export default () => (
     {/* Global tools */}
     <Loader/>
     {/* App */}
-    <SideBar />
     <Home />
   </AppWrapper>
 )

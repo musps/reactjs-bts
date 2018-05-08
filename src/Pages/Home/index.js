@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { withApp } from '@bt/Wrappers/AppWrapper'
+import LeftMenu from '@/Components/LeftMenu'
 
 const Home = class Home extends Component {
   constructor(props) {
@@ -9,8 +10,7 @@ const Home = class Home extends Component {
   render () {
     return (
       <div>
-        {this.props.actions.translate('global.app_name')}
-        <button onClick={this.props.actions.loaderShow}>update value</button>
+        <LeftMenu />
       </div>
     )
   }
