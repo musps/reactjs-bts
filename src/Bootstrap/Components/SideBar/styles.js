@@ -8,10 +8,10 @@ const SideBar = {
     flex-wrap: nowrap;
     color: white;
     width: ${props => props.current ? '350px' : '100px'};
+    min-width: ${props => props.current ? '350px' : '100px'};
     transition: 0.3s;
-
     height: 100vh;
-    position: absolute;
+    z-index: 1;
   `,
   content: styled.div`
     width: 100%;
@@ -38,6 +38,11 @@ const SideBar = {
 export const HandlerButtonCSS = {
   main: styled.div`
     margin: 0 0 7px 0;
+    height: 56px;
+    min-height: 56px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
   `,
   trigger: styled.button`
     background: #1F201C;
@@ -45,8 +50,10 @@ export const HandlerButtonCSS = {
     float: right;
     cursor: pointer;
     border: 0;
-    padding: 7px 14px;
-    margin: 12px 12px 0 12px;
+    height: 42px;
+    line-height: 42px;
+    padding: 0 13px;
+    margin: 0 13px 0 0;
     font-size: 1rem;
   `
 }
@@ -93,11 +100,11 @@ export const ItemCSS = {
     min-width: 60px;
     height: 60px;
     min-height: 60px;
-    border: 2px solid transparent;
+    border: 2px solid white;
     border-radius: 50%;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url('${props => props.srcIcon ? props.srcIcon : ''}');
+    /* background-image: url('${props => props.srcIcon ? props.srcIcon : ''}'); */
     cursor: pointer;
   `,
   label: styled.label`

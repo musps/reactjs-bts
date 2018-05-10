@@ -9,3 +9,98 @@ body {
   border: 0;
   padding: 0;
 }
+
+.navBar {
+  width: 100%;
+  height: 56px;
+  background: red;
+  position: fixed;
+}
+
+.navBar > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+  align-items: center;
+  height: 100%;
+}
+
+.navBar > ul > li {
+  margin: 0;
+  padding: 0;
+  padding: 0 14px;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.paddingIcon {
+  padding-left: 3px;
+}
+
+.closeMenuIcon {
+  font-size: 1.2em;
+}
+
+.content {
+  width: 100%;
+  height: calc(100% - 56px);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.pageSection {
+  flex-grow: 1;
+  background: blue;
+  display: flex;
+  color: black;
+  overflow-y: scroll;
+  height: calc(100vh - 56px);
+  font-size: 3em;
+  padding: 14px;
+  margin: 56px 0 0 0;
+}
+
+/**
+* REPONSIVE MOBILE APP.
+*/
+@media screen and (max-width: 1000px) {
+  .itemMenu {
+    display: none;
+  }
+  .navBarFullScreenItems.isOpen {
+    display: initial;
+  }
+}
+
+.navBarFullScreenItems {
+  width: 100%;
+  height: calc(100vh - 56px);
+  margin: 56px 0 0 0;
+  background: red;
+  position: fixed;
+  z-index: 2;
+  display: none;
+}
+.navBarFullScreenItems > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+  height: 100%;
+}
+.navBarFullScreenItems > ul > li {
+  margin: 0;
+  padding: 14px;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+

@@ -1,4 +1,5 @@
 export default {
   'loader': false,
-  'leftMenu': true
+  'leftMenu': false,
+  'topMenu': false
 }

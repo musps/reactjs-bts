@@ -13,7 +13,7 @@ export const HandlerButton = ({open, close, current, onClick}) => {
   return (
     <HandlerButtonCSS.main>
       <HandlerButtonCSS.trigger onClick={onClick}>
-        {_current}
+        <i className={`fas ${current ? 'fa-times' : 'fa-bars'} closeMenuIcon`}></i>
       </HandlerButtonCSS.trigger>
     </HandlerButtonCSS.main>
   )

@@ -13,6 +13,13 @@ const actions = {
   translate: translate
 }
 
+const NavBar = () => (
+  <div className="navBar">
+    k
+    k
+  </div>
+)
+
 export default () => (
   <AppWrapper data={globalData} actions={actions}>
     {/* Global tools */}
