@@ -1,5 +1,6 @@
 export default {
   'loader': false,
   'leftMenu': false,
-  'topMenu': false
+  'topMenu': false,
+  'isLogged': false
 }

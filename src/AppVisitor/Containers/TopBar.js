@@ -36,10 +36,10 @@ const TopBar = props => {
   }
 
   return (
-    <_NavBar isOpen={props.data.topMenu}>
+    <NavBar isOpen={props.data.topMenu}>
       <MobileMenu isOpen={props.data.topMenu} />
       <DesktopMenu onClick={onClick} />
-    </_NavBar>
+    </NavBar>
   )
 }
 
