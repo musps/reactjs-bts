@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { AppWrapper } from '@bt/Wrappers/AppWrapper'
 import globalData from './globalData'
-import Home from '@pg/Home'
 import Loader, { loaderShow, loaderHide } from '@bt/Components/Loader'
 import translate from '@bt/Providers/Translate'
 import './App.css'
-import SideBar from '@bt/Components/SideBar'
+
+import AppVisitor from '@/AppVisitor'
+import AppClient from '@/AppClient'
 
 const actions = {
   loaderShow: loaderShow,
@@ -13,18 +14,13 @@ const actions = {
   translate: translate
 }
 
-const NavBar = () => (
-  <div className="navBar">
-    k
-    k
-  </div>
-)
+
 
 export default () => (
   <AppWrapper data={globalData} actions={actions}>
     {/* Global tools */}
     <Loader/>
     {/* App */}
-    <Home />
+    <AppVisitor />
   </AppWrapper>
 )

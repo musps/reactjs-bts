@@ -30,17 +30,17 @@ const DesktopMenu = ({onClick}) => (
   </ItemList>
 )
 
-const TopMenu = props => {
+const TopBar = props => {
   const onClick = () => {
     props.actions.updateData('topMenu', props.data.topMenu === true ? false : true)
   }
 
   return (
-    <NavBar isOpen={props.data.topMenu}>
+    <_NavBar isOpen={props.data.topMenu}>
       <MobileMenu isOpen={props.data.topMenu} />
       <DesktopMenu onClick={onClick} />
-    </NavBar>
+    </_NavBar>
   )
 }
 
-export default withApp(TopMenu)
+export default withApp(TopBar)
