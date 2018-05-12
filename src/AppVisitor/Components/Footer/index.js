@@ -3,11 +3,11 @@ import './styles.css'
 
 const Footer = () => (
   <footer className="footerAppVisitor">
-    <a class="linkStore" href="#" target="_blank">
-      <div class="logoStore appleLogo"></div>
+    <a className="linkStore" href="#" target="_blank">
+      <div className="logoStore appleLogo"></div>
     </a>
-    <a class="linkStore" href="#" target="_blank">
-      <div class="logoStore androidLogo"></div>
+    <a className="linkStore" href="#" target="_blank">
+      <div className="logoStore androidLogo"></div>
     </a>
   </footer>
 )

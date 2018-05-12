@@ -1,45 +1,39 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { withApp } from '@bt/Wrappers/AppWrapper'
 import NavBar, {
-  ItemListMobileContainer,
-  ItemListMobile,
-  ItemMobile,
-  ItemList,
-  ItemMenu,
-  Item
-} from '@bt/Components/NavBar'
+  DesktopLink,
+  MobileItem
+} from './../Components/NavBar'
 
-const MobileMenu = ({isOpen}) => (
-  <ItemListMobileContainer isOpen={isOpen}>
-    <ItemListMobile>
-      <ItemMobile label='Accueil' />
-      <ItemMobile label='Comment ça marche ?' />
-      <ItemMobile label='Inscription' />
-      <ItemMobile label='Connexion' />
-    </ItemListMobile>
-  </ItemListMobileContainer>
+const MenuDesktop = () => (
+  <Fragment>
+    <DesktopLink label='Accueil' hideMobile />
+    <DesktopLink label='Comment ça marche ?' hideMobile />
+    <DesktopLink label='Inscription' hideMobile />
+    <DesktopLink label='Connexion' hideMobile />
+  </Fragment>
 )
 
-const DesktopMenu = ({onClick}) => (
-  <ItemList>
-    <Item label='Accueil' hideMobile={true} />
-    <Item label='Comment ça marche ?' hideMobile={true} />
-    <Item label='Inscription' hideMobile={true} />
-    <Item label='Connexion' hideMobile={true} />
-    <ItemMenu onClick={onClick}/>
-  </ItemList>
+const MenuMobile = () => (
+  <Fragment>
+    <MobileItem label='Accueil' />
+    <MobileItem label='Comment ça marche ?' />
+    <MobileItem label='Inscription' />
+    <MobileItem label='Connexion' />
+  </Fragment>
 )
 
 const TopBar = props => {
-  const onClick = () => {
+  const onClickOpenMobile = () => {
     props.actions.updateData('topMenu', props.data.topMenu === true ? false : true)
   }
 
   return (
-    <NavBar isOpen={props.data.topMenu}>
-      <MobileMenu isOpen={props.data.topMenu} />
-      <DesktopMenu onClick={onClick} />
-    </NavBar>
+    <NavBar
+      desktopMenu={<MenuDesktop />}
+      mobileMenu={<MenuMobile />}
+      openMobile={props.data.topMenu}
+      onClickOpenMobile={onClickOpenMobile} />
   )
 }
 
