@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import classNames from 'classnames'
 import './styles.css'
-
+import { Link } from 'react-router-dom'
 const NavBarContent = ({children, openMobile}) => {
   const cls = classNames({
     navBar: true,
@@ -21,7 +21,7 @@ export const DesktopMenu = ({children}) => (
   </ul>
 )
 
-export const DesktopLink = ({label, hideMobile}) => {
+export const DesktopLink = ({label, hideMobile, location}) => {
   const cls = classNames({
     item: true,
     hideMobile: hideMobile
@@ -29,7 +29,7 @@ export const DesktopLink = ({label, hideMobile}) => {
 
   return (
     <li className={cls}>
-      {label}
+      <Link to={location}>{label}</Link>
     </li>
   )
 }

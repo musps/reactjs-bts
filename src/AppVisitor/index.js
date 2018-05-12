@@ -2,19 +2,24 @@ import React, { Component } from 'react'
 import { withApp } from '@bt/Wrappers/AppWrapper'
 import { Link, Switch, Route } from 'react-router-dom'
 import './index.css'
-import TopBar from './Containers/TopBar'
-import Footer from './Components/Footer'
-import HomePage from './Pages/Home'
 
-const About = () => (
-  <div>
-    about
-  </div>
-)
+/**
+  * Template Components.
+  */
+import NavBar from './Containers/NavBar'
+import Footer from './Components/Footer'
+
+/**
+  * Pages.
+  */
+import HomePage from './Pages/Home'
+import AccountLoginPage from './Pages/Account/Login'
+import AccountRegisterpage from './Pages/Account/Register'
+import { PageNotFound } from './Pages/ErrorPage'
 
 const TemplateView = ({children}) => (
   <div className="containerAppVisitor">
-    <TopBar />
+    <NavBar />
     <div className="content">
       {children}
     </div>
@@ -22,17 +27,23 @@ const TemplateView = ({children}) => (
   </div>
 )
 
+const Router = () => (
+  <Switch>
+    <Route path="/site" exact component={HomePage} />
+    <Route path="/site/account/register" component={AccountRegisterpage} />
+    <Route path="/site/account/login" component={AccountLoginPage} />
+    <Route component={PageNotFound} />
+  </Switch>
+)
+
 const AppVisitor = props => {
-
-  console.log('AppVisitor', props.history)
-
   const onClick = () => {
     props.actions.loaderShow()
   }
 
   return (
     <TemplateView>
-      <HomePage />
+      <Router />
     </TemplateView>
   )
 }
