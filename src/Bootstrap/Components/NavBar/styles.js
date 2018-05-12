@@ -28,11 +28,13 @@ const Styles = {
     align-items: center;
     height: 100%;
   `,
-  item: styled.ul`
+  item: styled.li`
     margin: 0;
     padding: 0;
     padding: 0 14px;
     font-size: 1.2em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
     cursor: pointer;
     ${props => props.hideMobile && mediaQueries.mobile`
       display: none;
@@ -69,6 +71,7 @@ export const ItemListMobileCSS = {
     padding: 14px;
     font-size: 2em;
     cursor: pointer;
+    text-transform: uppercase;
   `
 }
 

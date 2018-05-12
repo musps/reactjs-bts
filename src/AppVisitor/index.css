@@ -2,16 +2,12 @@
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  height: 100vh;
 }
 
 .containerAppVisitor > .content {
   margin-top: 56px; /* TOP BAR HEIGHT */
-  background-color: yellow;
   flex-grow: 1;
-}
-
-.containerAppVisitor > .footer {
-  height: 100px;
-  background-color: blue;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
 }

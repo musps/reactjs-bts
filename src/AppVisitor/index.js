@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { withApp } from '@bt/Wrappers/AppWrapper'
 import { Link, Switch, Route } from 'react-router-dom'
 import './index.css'
 import TopBar from './Containers/TopBar'
-
+import Footer from './Components/Footer'
+import HomePage from './Pages/Home'
 
 const About = () => (
   <div>
@@ -11,15 +12,13 @@ const About = () => (
   </div>
 )
 
-const TemplateView = () => (
+const TemplateView = ({children}) => (
   <div className="containerAppVisitor">
     <TopBar />
     <div className="content">
-      content
+      {children}
     </div>
-    <footer className="footer">
-      footer
-    </footer>
+    <Footer />
   </div>
 )
 
@@ -32,7 +31,9 @@ const AppVisitor = props => {
   }
 
   return (
-    <TemplateView />
+    <TemplateView>
+      <HomePage />
+    </TemplateView>
   )
 }
 

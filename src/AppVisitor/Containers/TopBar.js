@@ -13,7 +13,7 @@ const MobileMenu = ({isOpen}) => (
   <ItemListMobileContainer isOpen={isOpen}>
     <ItemListMobile>
       <ItemMobile label='Accueil' />
-      <ItemMobile label='A propos' />
+      <ItemMobile label='Comment ça marche ?' />
       <ItemMobile label='Inscription' />
       <ItemMobile label='Connexion' />
     </ItemListMobile>
@@ -23,7 +23,7 @@ const MobileMenu = ({isOpen}) => (
 const DesktopMenu = ({onClick}) => (
   <ItemList>
     <Item label='Accueil' hideMobile={true} />
-    <Item label='A propos' hideMobile={true} />
+    <Item label='Comment ça marche ?' hideMobile={true} />
     <Item label='Inscription' hideMobile={true} />
     <Item label='Connexion' hideMobile={true} />
     <ItemMenu onClick={onClick}/>
