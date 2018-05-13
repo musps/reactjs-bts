@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import './styles.css'
 
 const BigPanel = ({children}) => (
@@ -13,10 +14,10 @@ export const SplitPanel = ({children}) => (
   </div>
 )
 
-export const LinkPanel = ({title}) => (
-  <a href="#" className="panelBtn">
+export const LinkPanel = ({title, location}) => (
+  <Link to={location} className="panelBtn">
     <span>{title}</span>
-  </a>
+  </Link>
 )
 
 export default BigPanel

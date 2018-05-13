@@ -7,7 +7,6 @@ import Form, {
   FormGroupButton,
 } from './../../../Components/Form'
 
-
 const LoginForm = () => (
   <Form>
     <FormGroup

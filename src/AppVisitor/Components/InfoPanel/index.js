@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import './styles.css'
 
 const InfoPanel = ({children}) => (
@@ -34,13 +35,13 @@ export const SubPanelCaptionItem = ({label, icon}) => {
   )
 }
 
-export const SubPanelLink = ({href, label}) => (
+export const SubPanelLink = ({location, label}) => (
   <div className="panel panelWithBtn">
-    <a href="{href}">{label}</a>
+    <Link to={location}>{label}</Link>
   </div>
 )
 
-export const SubPanel = ({children, title, linkLabel}) => (
+export const SubPanel = ({children, title, linkLabel, linkLocation}) => (
   <div className="subPanel">
     {title !== null &&
       <SubPanelTitle title={title} />
@@ -48,7 +49,7 @@ export const SubPanel = ({children, title, linkLabel}) => (
     <SubPanelCaption>
       {children}
     </SubPanelCaption>
-    <SubPanelLink href='#' label={linkLabel} />
+    <SubPanelLink location={linkLocation} label={linkLabel} />
   </div>
 )
 

@@ -11,23 +11,23 @@ const MenuDesktop = () => (
       location='/site' />
     <DesktopLink label='Comment ça marche ?' hideMobile
       location='/site/help' />
-    <DesktopLink label='Inscription' hideMobile
-      location='/site/account/register' />
     <DesktopLink label='Connexion' hideMobile
       location='/site/account/login' />
+    <DesktopLink label='Créer un compte' hideMobile
+      location='/site/account/register' />
   </Fragment>
 )
 
 const MenuMobile = () => (
   <Fragment>
     <MobileItem label='Accueil'
-      location='/' />
+      location='/site' />
     <MobileItem label='Comment ça marche ?'
-      location='/help' />
-    <MobileItem label='Inscription'
-      location='/account/register' />
+      location='/site/help' />
     <MobileItem label='Connexion'
-      location='/account/login' />
+      location='/site/account/login' />
+    <MobileItem label='Créer un compte'
+      location='/site/account' />
   </Fragment>
 )
 

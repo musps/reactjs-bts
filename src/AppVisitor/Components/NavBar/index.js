@@ -46,9 +46,9 @@ export const MobileItemList = ({children}) => (
   </ul>
 )
 
-export const MobileItem = ({label}) => (
+export const MobileItem = ({label, location}) => (
   <li className="item">
-    {label}
+    <Link to={location}>{label}</Link>
   </li>
 )
 

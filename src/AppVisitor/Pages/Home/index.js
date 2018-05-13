@@ -6,11 +6,14 @@ import InfoPanel, { SubPanel, SubPanelCaptionItem } from './../../Components/Inf
 const AccountLinks = () => (
   <BigPanel>
     <SplitPanel>
-      <LinkPanel title="J'ai déjà un compte." />
+      <LinkPanel title="J'ai déjà un compte."
+        location='/site/account/login' />
     </SplitPanel>
     <SplitPanel>
-      <LinkPanel title='Je veux livrer !' />
-      <LinkPanel title='Je veux acheter !' />
+      <LinkPanel title='Je veux livrer !'
+        location='/site/account/register/delivery_man' />
+      <LinkPanel title='Je veux acheter !'
+        location='/site/account/register/buyer' />
     </SplitPanel>
   </BigPanel>
 )
@@ -19,7 +22,8 @@ const InfoPanelDetail = () => (
   <InfoPanel>
     <SubPanel
       title='Comment ça marche ?'
-      linkLabel='J’ai compris ! Je veux acheter'>
+      linkLabel='J’ai compris ! Je veux acheter'
+      linkLocation='/site/account/register/buyer'>
       <SubPanelCaptionItem 
         label='Je crée ma commande'
         icon='/assets/imgs/icons/home/worker.svg' />
@@ -39,7 +43,8 @@ const InfoPanelDetail = () => (
 
     <SubPanel
       title={null}
-      linkLabel='J’ai compris ! Je veux livrer'>
+      linkLabel='J’ai compris ! Je veux livrer'
+      linkLocation='/site/account/register/delivery_man'>
       <SubPanelCaptionItem 
         label='Je recois la liste des livraisons disponibles'
         icon='/assets/imgs/icons/home/worker.svg' />
