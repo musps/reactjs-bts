@@ -1,0 +1,24 @@
+.fakeContent {
+  font-size: 3em;
+  padding: 14px;
+  margin: 0;
+}
+
+.containerAppClient {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.containerAppClient > .content {
+  flex: 1;
+  height: 100vh;
+  max-height: 100vh;
+  overflow-y: scroll;
+}
+
+@media screen and (max-width: 900px) {
+  .containerAppClient {
+    flex-direction: column;
+  }
+}

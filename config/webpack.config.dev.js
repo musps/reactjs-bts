@@ -88,7 +88,8 @@ module.exports = {
       '@': path.resolve('src'),
       '@pg': path.resolve('src/Pages'),
       '@bt': path.resolve('src/Bootstrap'),
-
+      '@appCl': path.resolve('src/AppClient'),
+      '@appVt': path.resolve('src/AppVisitor'),
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',

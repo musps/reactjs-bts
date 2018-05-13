@@ -1,7 +1,7 @@
 .navBar {
   width: 100%;
   height: 56px;
-  background: red;
+  background: #2C2C2C;
   position: fixed;
 }
 
@@ -25,12 +25,8 @@
   letter-spacing: 2px;
   text-transform: uppercase;
   cursor: pointer;
+  color: white;
 }
-
-.navBar > .itemList > .item  a:hover {
-  text-decoration: underline;
-}
-
 
 /**
   * MOBILE MENU
@@ -40,7 +36,7 @@
   width: 100%;
   height: calc(100vh - 56px);
   margin: 56px 0 0 0;
-  background: red;
+  background: #2C2C2C;
   position: fixed;
   z-index: 2;
   display: none;
@@ -64,10 +60,7 @@
   font-size: 1.5em;
   cursor: pointer;
   text-transform: uppercase;
-}
-
-.navBar > .mobileContent > .itemList > .item > *:hover {
-  text-decoration: underline;
+  color: white;
 }
 
 @media screen and (max-width: 900px) {
@@ -82,6 +75,11 @@
 
 .navBar > .itemList > .item a,
 .navBar > .mobileContent > .itemList > .item a {
-  color: black;
+  color: white;
   text-decoration: none;
+}
+
+.navBar > .itemList > .item  a:hover,
+.navBar > .mobileContent > .itemList > .item > a:hover {
+  text-decoration: underline;
 }

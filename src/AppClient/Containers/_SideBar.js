@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { withApp } from '@bt/Wrappers/AppWrapper'
-import SideBar, { ItemList, ItemTitle, Item, ItemDivider, ItemUserInfo } from '@bt/Components/SideBar'
+import SideBar, { ItemList, ItemTitle, Item, ItemDivider, ItemUserInfo } from '@appCl/Components/SideBar'
 
 const MenuServices = ({current}) => {
   return (
@@ -34,7 +34,7 @@ const MenuHelp = ({current}) => {
   )
 }
 
-const LeftMenu = props => {
+const SideBarContainer = props => {
   const current = props.data.leftMenu
   const onClick = () => {
     props.actions.updateData('leftMenu', props.data.leftMenu === true ? false : true)
@@ -61,4 +61,4 @@ const LeftMenu = props => {
   )
 }
 
-export default withApp(LeftMenu)
+export default withApp(SideBarContainer)
