@@ -10,15 +10,26 @@
   flex-wrap: nowrap;
 }
 
-.containerAppClient > .content {
+.containerAppClient > .rightContent {
   flex: 1;
   height: 100vh;
   max-height: 100vh;
   overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
 }
 
+.containerAppClient > .rightContent > .pageContent {
+  flex-grow: 1;
+}
+
+/**
+  * MOBILE VERSION.
+  */
 @media screen and (max-width: 900px) {
   .containerAppClient {
     flex-direction: column;
   }
 }
+

@@ -26,6 +26,13 @@
   flex-wrap: nowrap;
 }
 
+/**
+  * Hide scroll bar.
+  */
+.sideBar > .content::-webkit-scrollbar { 
+  display: none; 
+}
+
 .sideBar > .navBarSideBar {
   height: 56px;
   min-height: 56px;

@@ -1,0 +1,46 @@
+.headerClient {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.headerClient > .searchBarContent {
+}
+
+.headerClient > .accountContent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  margin: 15px;
+}
+
+.position-NoActionYet {
+  flex-direction: column;
+}
+
+.orderFirst {
+  order: 1;
+}
+
+.orderSecond {
+  order: 2;
+}
+
+/**
+  * Tools.
+  */
+.iconAccs {
+  width: 60px;
+  min-width: 60px;
+  height: 60px;
+  min-height: 60px;
+  border: 2px solid black;
+  border-radius: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.iconAccsMargin {
+  margin: 0 10px;
+}

@@ -1,0 +1,139 @@
+/**
+  * Search Bar
+  */
+
+.searchBar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.searchBar > .searchBarInput {
+  background-color: white;
+  width: 100%;
+  height: 56px;
+  font-size: 18px;
+  padding: 0 7px;
+}
+
+.searchBar > .searchBarBtn {
+  width: 56px;
+  height: 56px;
+  min-height: 56px;
+  min-width: 56px;
+  text-align: center;
+  border-radius: 50%;
+  margin: 0 0 0 10px;
+  height: 56px;
+  width: 56px;
+  line-height: 56px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #e59e17;
+  color: white;
+  border: 0;
+  transition: 0.7s;
+}
+
+.searchBar > .searchBarBtn:hover {
+  font-size: 22px;
+}
+
+/**
+  * SEARCH BAR CONTENT RESULT.
+  */
+
+.sbItemList {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.sbItemList > .sbItem {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 5px 15px;
+  transition: 0.4s;
+}
+
+.sbItemList > .sbItemDivider {
+  width: 100%;
+  height: 2px;
+  background-color: #7d7d7d;
+  border-radius: 45%;
+  margin: 5px 0;
+}
+
+.sbItemList > .sbItemTitle {
+  margin: 0;
+  font-size: 26px;
+  padding: 0 15px;
+  color: #7d7d7d;
+}
+
+.sbItemList h1.sbItemBigTitle {
+  margin: 0;
+  font-size: 24px;
+  color: black;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.sbItemList > .sbItem > .sbItemInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.sbItemInfo > h1.sbItemInfoTitle {
+  color: black;
+  font-size: 24px;
+  margin: 0;
+}
+
+.sbItemInfo > h2.sbItemInfoDesc {
+  color: #7d7d7d;
+  font-size: 16px;
+  margin: 0;
+}
+
+.sbItem > .sbItemIcon {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  min-height: 38px;
+  border: 2px solid black;
+}
+
+.sbItemBigTitle:hover,
+.sbItem:hover {
+  text-decoration: underline;
+  background-color: rgba(125, 125, 125, 0.2);
+}
+
+/** add pointer on items **/
+.sbItemBigTitle,
+.sbItem > * {
+  cursor: pointer
+}
+
+/**
+  * MOBILE VERSION.
+  */
+@media screen and (max-width: 1050px) {
+  .searchBarResult {
+    max-width: 650px;
+    margin: 10px 0;
+  }
+
+  .sbItem,
+  .sbItemTitle {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+}
+
