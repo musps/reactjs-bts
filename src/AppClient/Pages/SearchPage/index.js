@@ -1,55 +1,11 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
+import {
+  SearchPageComponent,
+  SearchResult,
+  NoResult
+} from './Components'
 import './styles.css'
 
-import SearchBar, {
-  ItemList,
-  ItemListTitle,
-  ItemDivider,
-  ItemBigTitle,
-  Item
-} from '@appCl/Components/SearchBar'
-
-const SearchResult = ({criteria}) => {
-  const showFullResult = `Voir tous les résultats pour << ${criteria} >>`
-
-  return (
-    <Fragment>
-      <ItemList>
-        <Item label='Label' description='Description' />
-        <Item label='Label' description='Description' />
-        <Item label='Label' description='Description' />
-      </ItemList>
-
-      <ItemList>
-        <ItemListTitle title='Articles' />
-        <Item label='Label' description='Description' />
-        <Item label='Label' description='Description' />
-        <Item label='Label' description='Description' />
-      </ItemList>
-
-      <ItemList>
-        <ItemBigTitle title={showFullResult} />
-      </ItemList>
-    </Fragment>
-  )
-}
-
-const SearchPageComponent = ({value, onChange, searchResult}) => (
-  <div className='searchPage'>
-    <div className='searchBarContent'>
-      <SearchBar
-        value={value}
-        onChange={onChange}
-        placeHolder='Cherchez ce que vous voulez...'
-      />
-    </div>
-    {typeof searchResult !== 'undefined' &&
-      <div className='searchBarResult'>
-        {searchResult}
-      </div>
-    }
-  </div>
-)
 
 const SearchPage = class searchPage extends Component {
   state = {
@@ -77,6 +33,10 @@ const SearchPage = class searchPage extends Component {
     if (siz > 0 && siz <= 3) {
       return (
         <SearchResult criteria={this.state.value} />
+      )
+    } else if (siz > 3) {
+      return (
+        <NoResult criteria={this.state.value} />
       )
     }
   }
