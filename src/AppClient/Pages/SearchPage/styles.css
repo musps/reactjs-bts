@@ -41,7 +41,6 @@
   max-width: 1000px;
 }
 
-
 .searchBarNoResult > .content {
   background-image: url('/assets/imgs/background/noResultFound.png');
   background-size: contain;
@@ -53,14 +52,17 @@
   flex-direction: column;
 }
 
-.searchBarNoResult > .content > h1, h2, label {
+.searchBarNoResult > .content > h1,
+.searchBarNoResult > .content > h2,
+.searchBarNoResult > .content > label {
   display: block;
   text-align: center;
   color: #747474;
   margin-bottom: 0;
 }
 
-.searchBarNoResult > .content > h1, label {
+.searchBarNoResult > .content > h1,
+.searchBarNoResult > .content > label {
   font-size: 30px;
 }
 
@@ -91,16 +93,10 @@
   transition: 0.5;
   cursor: pointer;
   text-align: center;
+  display: block;
 }
 
 .btnCreateCMD:hover {
   background-color: rgba(229, 158, 23, 1);
   text-decoration: underline;
 }
-
-
-
-
-
-
-

@@ -6,7 +6,6 @@ import {
 } from './Components'
 import './styles.css'
 
-
 const SearchPage = class searchPage extends Component {
   state = {
     value: '',
