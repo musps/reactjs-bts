@@ -2,8 +2,15 @@ import React, { Component } from 'react';
 import { Link, Switch, Route } from 'react-router-dom'
 import './index.css'
 
-import HeaderClient from './Components/HeaderClient'
+/**
+  * Components.
+  */
 import SideBar from './Containers/SideBar'
+
+/**
+  * Container
+  */
+import HeaderContainer from './Containers/Header'
 
 /**
   * Pages.
@@ -16,7 +23,7 @@ const TemplateView = ({children}) => (
   <div className="containerAppClient">
     <SideBar />
     <div className="rightContent">
-      <HeaderClient />
+      <HeaderContainer />
       <div className='pageContent'>
         {children}
       </div>

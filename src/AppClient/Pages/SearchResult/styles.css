@@ -6,6 +6,7 @@
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 20px 20px 20px;
+  position: relative;
 }
 
 .searchResultPage > .searchCriteria {
@@ -108,6 +109,9 @@
 .productNotOK {
   text-align: center;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .productNotOk > .titleNotOk {
@@ -115,11 +119,10 @@
   color: #2c2c2c;
 }
 
-.btnCreateCMD {
+.btnCreateCMDMore {
   text-decoration: none;
   color: white;
   background-color: rgba(229, 158, 23, 0.8);
-  width: 100%;
   padding: 14px 21px;
   font-size: 30px;
   border-radius: 7px;
@@ -129,7 +132,7 @@
   display: block;
 }
 
-.btnCreateCMD:hover {
+.btnCreateCMDMore:hover {
   background-color: rgba(229, 158, 23, 1);
   text-decoration: underline;
 }

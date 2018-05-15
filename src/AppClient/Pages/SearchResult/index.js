@@ -1,44 +1,11 @@
 import React from 'react'
+import {
+  SearchResultHeader,
+  ResultListItem,
+  ResultCategories,
+  ItemCat
+} from './Components'
 import './styles.css'
-
-const SearchResultHeader = ({label, count}) => (
-  <div className='searchCriteria'>
-    <h1 className='label'>« {label} »</h1>
-    <span className='count'>{count} Résultat(s)</span>
-  </div>
-)
-
-const ResultListItem = ({label, description, price}) => (
-  <div className='resultItem'>
-    <img className='img' />
-
-    <div className='desc'>
-      <label className='firstTitle'>{label}</label>
-      <label className='subTitle'>{description}</label>
-    </div>
-
-    <div className='descMore'>
-      <div className='price'>
-        <label className='priceStartAt'>à partir de</label>
-        <label className='priceAmount'>{price}</label>
-      </div>
-      <div className='btnIconShop'></div>
-    </div>
-  </div>
-)
-
-const ResultCategories = ({children}) => (
-  <ul className='resultCategories'>
-    {children}
-  </ul>
-)
-
-const ItemCat = ({label}) => (
-  <li className='itemCat'>
-    <div class='iconCat'></div>
-    <label>{label}</label>
-  </li>
-)
 
 const SearchResult = () => (
   <div className='searchResultPage'>
@@ -68,7 +35,9 @@ const SearchResult = () => (
 
     <div className='productNotOK'>
       <h1 className='titleNotOk'>Le produit n'est pas ici ?</h1>
-      <a className='btnCreateCMD'>Personnaliser votre commande</a>
+      <div>
+        <a className='btnCreateCMDMore'>Personnaliser votre commande</a>
+      </div>
     </div>
   </div>
 )

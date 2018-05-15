@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+
 import SearchBar, {
   ItemList,
   ItemListTitle,
@@ -29,7 +31,9 @@ export const SearchResult = ({criteria}) => {
       </ItemList>
 
       <ItemList>
-        <ItemBigTitle title={showFullResult} />
+        <Link to='/app/search'>
+          <ItemBigTitle title={showFullResult} />
+        </Link>
       </ItemList>
     </div>
   )

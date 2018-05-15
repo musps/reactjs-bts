@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react'
+import classNames from 'classnames'
 import './styles.css'
 
 const HeaderClient = ({searchBarContent, accountContent}) => (
@@ -19,17 +20,47 @@ const Icon = () => (
   </div>
 )
 
-const AccountContent = () => (
+const IconWithHoverInfo = ({content, isOpen, onClick}) => {
+  const toggleStates = classNames({
+    onHoverContent: true,
+    isOpen: isOpen
+  })
+
+  return (
+    <div className='iconWithHover iconAccsMargin'>
+      <div className='iconAccs' onClick={onClick}></div>
+      <div className={toggleStates}>
+        {content}
+      </div>
+    </div>
+  )
+}
+
+const AccountContent = ({content, isOpen, onClick}) => (
   <Fragment>
     <Icon />
-    <Icon />
+    <IconWithHoverInfo content={content} isOpen={isOpen} onClick={onClick} />
   </Fragment>
 )
 
-const HeaderClientContainer = () => (
+const HeaderClientContainer = ({content, isOpen, onClick}) => (
   <HeaderClient
-    accountContent={<AccountContent />}
+    accountContent={<AccountContent 
+        content={content}
+        isOpen={isOpen}
+        onClick={onClick} />}
   />
+)
+
+export const NoProductInCat = () => (
+  <div className='noProductInCat'>
+    <div className='message'>
+      Votre malette est bien vide pour le moment.
+    </div>
+    <div className='messageMore'>
+      Besoin d’inspiration ?
+    </div>
+  </div>
 )
 
 export default HeaderClientContainer
