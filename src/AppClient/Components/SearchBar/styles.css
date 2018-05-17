@@ -9,7 +9,8 @@
 }
 
 .searchBar > .searchBarInput {
-  background-color: white;
+  background-color: #fbfbfb;
+  border: 0;
   width: 100%;
   height: 56px;
   font-size: 18px;

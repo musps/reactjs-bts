@@ -49,6 +49,7 @@
   border-radius: 50%;
   background-position: center;
   background-repeat: no-repeat;
+  background-size: 30px;
 }
 
 .iconAccsMargin {
@@ -65,6 +66,7 @@
   display: none;
   background-color: white;
   box-shadow: 1px 1px 4px rgba(85, 85, 85, 0.3);
+  z-index: 90;
 }
 
 .onHoverContent.isOpen {
@@ -108,3 +110,13 @@
   color: #2c2c2c;
   padding: 12px;
 }
+
+.icon-actionOne {
+  background-image: url('/assets/imgs/icons/icon-profil-connect.png');
+  background-size: contain;
+}
+.icon-actionTwo {
+  background-image: url('/assets/imgs/icons/work-briefcase.png');
+}
+
+

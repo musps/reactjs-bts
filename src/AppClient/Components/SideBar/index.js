@@ -37,10 +37,10 @@ export const ItemListTitle = ({title}) => (
   </li>
 )
 
-export const ItemListItem = ({label, location = ''}) => (
+export const ItemListItem = ({icon, label, location = ''}) => (
   <li className='item'>
     <Link to={location}>
-      <div className='icon'></div>
+      <div className={`icon ${icon}`}></div>
       <div className='label'>{label}</div>
     </Link>
   </li>
@@ -58,8 +58,8 @@ export const ItemUserInfoContent = ({fullName, addr, addrValue}) => (
   </div>
 )
 
-export const ItemUserInfo = ({fullName, addr, addrValue}) => (
-  <ItemListItem label={<ItemUserInfoContent 
+export const ItemUserInfo = ({icon, fullName, addr, addrValue}) => (
+  <ItemListItem icon={icon} label={<ItemUserInfoContent 
     fullName={fullName} 
     addr={addr} 
     addrValue={addrValue} />} />

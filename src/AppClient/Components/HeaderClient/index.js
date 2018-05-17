@@ -15,8 +15,8 @@ const HeaderClient = ({searchBarContent, accountContent}) => (
   </div>
 )
 
-const Icon = () => (
-  <div className='iconAccs iconAccsMargin'>
+const Icon = ({icon}) => (
+  <div className={`iconAccs iconAccsMargin ${icon}`}>
   </div>
 )
 
@@ -28,7 +28,7 @@ const IconWithHoverInfo = ({content, isOpen, onClick}) => {
 
   return (
     <div className='iconWithHover iconAccsMargin'>
-      <div className='iconAccs' onClick={onClick}></div>
+      <div className='iconAccs icon-actionTwo' onClick={onClick}></div>
       <div className={toggleStates}>
         {content}
       </div>
@@ -38,7 +38,7 @@ const IconWithHoverInfo = ({content, isOpen, onClick}) => {
 
 const AccountContent = ({content, isOpen, onClick}) => (
   <Fragment>
-    <Icon />
+    <Icon icon='icon-actionOne' />
     <IconWithHoverInfo content={content} isOpen={isOpen} onClick={onClick} />
   </Fragment>
 )

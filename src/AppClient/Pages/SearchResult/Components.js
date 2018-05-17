@@ -34,7 +34,7 @@ export const ResultCategories = ({children}) => (
 
 export const ItemCat = ({label}) => (
   <li className='itemCat'>
-    <div class='iconCat'></div>
+    <div className='iconCat'></div>
     <label>{label}</label>
   </li>
 )
