@@ -34,6 +34,7 @@ const ProfilCustomer = ({data, onChange, onClickEdit}) => (
           label='Téléphone'
           type='text'
           value={data.phone.value}
+          onClickEdit={onClickEdit}
           isEdit={data.phone.isEdit} />
         <ItemDivider />
         <ItemInput
@@ -41,6 +42,7 @@ const ProfilCustomer = ({data, onChange, onClickEdit}) => (
           label='Mot de passe'
           type='password'
           value={data.password.value}
+          onClickEdit={onClickEdit}
           isEdit={data.password.isEdit} />
         <ItemDivider />
       </BoxContent>

@@ -7,6 +7,7 @@ import SideBar, {
   ItemListDivider,
   ItemUserInfo
 } from '@appCl/Components/SideBar'
+import { withRouter } from 'react-router'
 
 const UserInfo = () => (
   <ItemList>
@@ -17,41 +18,77 @@ const UserInfo = () => (
   </ItemList>
 )
 
-const MenuServices = () => (
+const MenuServices = ({pathName}) => (
   <ItemList>
     <ItemListTitle title='Nos agents à vos services' />
-    <ItemListItem label='Livraison sur mesure' />
-    <ItemListItem label='Restauration' />
-    <ItemListItem label='Coursier' />
+    <ItemListItem 
+      label='Livraison sur mesure'
+      pathName={pathName}
+      location='/app'
+      icon='icon-livraison'
+    />
+    <ItemListItem 
+      label='Restauration'
+      pathName={pathName}
+      icon='icon-restaurant'
+      />
+    <ItemListItem 
+      label='Coursier'
+      pathName={pathName}
+      icon='icon-coursier'/>
   </ItemList>
 )
 
-const MenuAccount = () => (
+const MenuAccount = ({pathName}) => (
   <ItemList full>
     <ItemListTitle title='Mon profil' />
-    <ItemListItem label='Mes infos' />
-    <ItemListItem label='Historique' />
-    <ItemListItem label='Favori' />
+    <ItemListItem 
+      location='/app/profil/customer'
+      pathName={pathName}
+      icon='icon-info'
+      label='Mes infos'
+    />
+    <ItemListItem 
+      label='Historique'
+      location='/app/history/agent'
+      pathName={pathName}
+      icon='icon-calendrier'
+    />
+    <ItemListItem 
+      label='Favori'
+      pathName={pathName}
+      icon='icon-favori'
+    />
   </ItemList>
 )
 
-const MenuHelp = () => (
+const MenuHelp = ({pathName}) => (
   <ItemList>
     <ItemListDivider />
-    <ItemListItem label='Support' />
-    <ItemListItem label='Déconnexion' />
+    <ItemListItem 
+      label='Support'
+      isSelected={true}
+      icon='icon-aide'
+    />
+    <ItemListItem 
+      label='Déconnexion'
+      isSelected={true}
+      icon='icon-off'
+    />
   </ItemList>
 )
 
 const SideBarContainer = props => {
+  const pathName = props.location.pathname
+
   return (
     <SideBar>
-      <UserInfo />
-      <MenuServices />
-      <MenuAccount />
+      <UserInfo pathName={pathName} />
+      <MenuServices pathName={pathName} />
+      <MenuAccount pathName={pathName} />
       <MenuHelp />
     </SideBar>
   )
 }
 
-export default withApp(SideBarContainer)
+export default withApp(withRouter(SideBarContainer))

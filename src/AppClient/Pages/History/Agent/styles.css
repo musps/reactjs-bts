@@ -1,0 +1,106 @@
+.historyPage {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/**
+  *
+  */
+
+.historyPage > .hp-title > h1 {
+  font-size: 40px;
+  color: #2c2c2c;
+}
+
+/**
+  *
+  */
+
+.historyPage > .hp-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.historyPage > .hp-content > .hp-c-left {
+  width: 45%
+}
+
+.historyPage > .hp-content > .hp-c-right {
+  width: 65%;
+}
+
+.cd-p-ticket {
+  width: 60%;
+}
+
+.cd-p-detail {
+  width: 40%;
+}
+
+.listTicket {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.lt-divider {
+  width: 100%;
+  height: 2px;
+  background-color: #e9e9e9;
+  margin: 14px 0;
+}
+
+.lt-item {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 5px 0;
+}
+
+.lt-item > .qte {
+  font-size: 18px;
+  color: #2c2c2c;
+  padding: 0 7px;
+}
+
+.lt-item > .name {
+  flex-grow: 1;
+  font-size: 18px;
+  color: #2c2c2c;
+  padding: 0 7px;
+}
+
+.lt-item > .price {
+  font-size: 18px;
+  color: #2c2c2c;
+  padding: 0 7px;
+}
+
+.lt-priceInfo {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 5px 0;
+}
+
+.lt-priceInfo > .name {
+  flex-grow: 1;
+  padding: 0 7px;
+  font-size: 18px;
+  color: #2c2c2c;
+}
+
+.lt-priceInfo > .price {
+  padding: 0 7px;
+  font-size: 18px;
+  color: #2c2c2c;
+}
+
+.itemContent > h1 {
+  color: #2c2c2c;
+  font-size: 24px;
+  margin: 0 5px;
+}

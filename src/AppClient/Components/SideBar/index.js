@@ -37,14 +37,28 @@ export const ItemListTitle = ({title}) => (
   </li>
 )
 
-export const ItemListItem = ({icon, label, location = ''}) => (
-  <li className='item'>
-    <Link to={location}>
-      <div className={`icon ${icon}`}></div>
-      <div className='label'>{label}</div>
-    </Link>
-  </li>
-)
+export const ItemListItem = ({icon = '', label, location = '', pathName}) => {
+  const isSelected = pathName === location
+  const cls = classNames({
+    label: true,
+    itemLabelSelected: isSelected
+  })
+
+  const clsIcons = classNames({
+    icon: true,
+    [icon]: true,
+    isSelected: isSelected
+  })
+
+  return (
+    <li className='item'>
+      <Link to={location}>
+        <div className={clsIcons}></div>
+        <div className={cls}>{label}</div>
+      </Link>
+    </li>
+  )
+}
 
 export const ItemListDivider = () => (
   <li className='itemDivider'></li>

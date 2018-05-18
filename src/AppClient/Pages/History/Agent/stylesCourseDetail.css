@@ -1,0 +1,410 @@
+.courseDetail {
+  background-color: white;
+}
+
+/**
+  *
+  */
+
+.cd-header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  border-bottom: 2px solid #e9e9e9;
+  padding: 0 14px;
+}
+
+.cd-header > h1 {
+  flex-grow: 1;
+  font-size: 30px;
+  color: #2c2c2c;
+}
+
+.cd-header > label {
+  font-size: 18px;
+  color: #2c2c2c;
+}
+
+/**
+  *
+  */
+
+.cd-products {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 14px;
+  border-bottom: 2px solid #e9e9e9;
+}
+
+.cd-products > .cd-p-ticket {
+
+}
+
+.cd-products > .cd-p-detail {
+}
+
+/**
+  *
+  */
+.detailTicket {
+
+}
+
+.btnFacture {
+  border-radius: 4px;
+  padding: 7px;
+  box-shadow: 1px 1px 4px rgba(85, 85, 85, 0.3);
+  border: 0;
+  background-color: #e6e6e6;
+  display: inline-flex;
+  align-items: center;
+}
+
+.btnFacture.white {
+  background-color: white !important;
+}
+
+.btnFacture > .icon {
+  width: 22px;
+  height: 22px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.btnFacture > .label {
+  color: #2c2c2c;
+  font-size: 14px;
+  padding: 0 7px;
+}
+
+.icon-receipt {
+  background-image: url('/assets/imgs/icons/receipt.png');
+}
+
+.icon-facture {
+  background-image: url('/assets/imgs/icons/facture.png');
+}
+
+.btnList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 7px;
+}
+
+/**
+  *
+  */
+.historyItem {
+  background-color: #e6e6e6;
+  border-bottom: 1px solid #bdbdbd;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.historyItem.isSelected {
+  background-color: white;
+}
+
+.itemContent {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.itemCategory {
+  margin: 0 5px 0 0;
+}
+
+.itemCategory > .icon {
+  width: 30px;
+  height: 30px;
+  background-color: black;
+}
+
+.itemImage > .image {
+  width: 60px;
+  height: 60px;
+  background-color: #f7de50;
+}
+
+.ht-content > .title {
+  color: #2c2c2c;
+  font-size: 30px;
+}
+
+
+
+.tt {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin: 0 5px;
+}
+
+.tt > .date {
+  font-size: 16px;
+  color: #2c2c2c;
+  flex-grow: 1;
+}
+
+.tt > .price {
+  font-size: 24px;
+  color: #2c2c2c;
+}
+
+.shop {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.shop > .icon {
+  margin: 5px;
+  width: 22px;
+  height: 22px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url('/assets/imgs/icons/store.png');
+}
+
+.shop > .label {
+
+}
+
+.icon-replay {
+  background-image: url('/assets/imgs/icons/replay.png');
+}
+
+/**
+  *
+  */
+.cd-deliveryInfo {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 14px;
+}
+
+.cd-deliveryInfo > .left {
+  width: 50%;
+}
+
+.cd-deliveryInfo > .right {
+  width: 50%
+}
+
+.cd-deliveryInfo > .left > .time {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.cd-deliveryInfo > .left > .time > .time-date {
+  width: 40%;
+}
+
+.cd-deliveryInfo > .left > .time > .time-min {
+  width: 60%;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.timeDateList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.timeDateList > .title { 
+  color: #2c2c2c;
+  font-size: 18px;
+  flex-grow: 1;
+  padding: 4px 0;
+}
+
+.timeDateList > .value { 
+  color: #2c2c2c;
+  font-size: 18px;
+  padding: 4px 0;
+}
+
+/**
+  *
+  */
+
+.cd-deliveryMapAndAddrs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.cd-deliveryMapAndAddrs > .map {
+  width: 50%;
+}
+
+.cd-deliveryMapAndAddrs > .addrs {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.cd-deliveryMapAndAddrs > .map > .mapIn {
+  margin: 20px;
+  width: calc(100% - 40px);
+  height: 200px;
+  background-color: red;
+  border-radius: 4px;
+}
+
+.cd-deliveryMapAndAddrs > .addrs > .addr {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.cd-deliveryMapAndAddrs > .addrs > .addr > .icon {
+  width: 30px;
+  height: 30px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 15px;
+}
+
+.cd-deliveryMapAndAddrs > .addrs > .addr > .label {
+  font-size: 18px;
+  color: #2c2c2c;
+  width: 100%;
+  max-width: 200px;
+}
+
+.icon-home {
+  background-image: url('/assets/imgs/icons/home-button.png');
+}
+
+.icon-dest {
+  background-image: url('/assets/imgs/icons/placeholder.png');
+}
+
+/**
+  *
+  */
+.cd-agentInfo {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  background-color: white;
+  justify-content: center;
+  padding: 14px;
+}
+
+
+.cd-agentInfo > .cd-ai-agent {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.cd-agentInfo > .cd-ai-agent {
+  width: 40%;
+}
+
+.cd-agentInfo > .cd-ai-agent > .icon-agent {
+  width: 90px;
+  height: 90px;
+  border: 2px solid black;
+  border-radius: 50%;
+}
+
+.cd-agentInfo > .cd-ai-agent > .agent-info {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  padding: 0 15px;
+}
+
+.cd-agentInfo > .cd-ai-agent > .agent-info > .title {
+  color: #2c2c2c;
+  font-size: 18px;
+}
+
+.cd-agentInfo > .cd-ai-agent > .agent-info > .value {
+  color: #2c2c2c;
+  font-size: 18px;
+}
+
+.icon-stars {
+  background-image: url('/assets/imgs/icons/stars.png');
+}
+
+.icon-buble {
+  background-image: url('/assets/imgs/icons/buble.png');
+}
+
+
+
+.contactItem {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  background-color: transparent;
+  border: 0;
+  align-items: center;
+  cursor: pointer;
+}
+
+.contactItem > * {
+  cursor: pointer;
+}
+
+.contactItem > .icon {
+  width: 30px;
+  height: 30px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 15px 5px;
+}
+
+.contactItem > .text {
+  font-size: 16px;
+  color: #2c2c2c;
+  padding: 7px;
+  width: 100%;
+  max-width: 220px;
+  text-align: left;
+}
+
+
+
+
+
+
+
+
+
+
+

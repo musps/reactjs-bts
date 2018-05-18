@@ -130,10 +130,15 @@ ul.itemListSideBar > li.item .icon {
   min-width: 60px;
   height: 60px;
   min-height: 60px;
-  border: 2px solid white;
   border-radius: 50%;
   background-position: center;
   background-repeat: no-repeat;
+  background-color: #2C2C2C;
+  position: relative;
+}
+
+ul.itemListSideBar > li.item .icon.isSelected {
+  border: 2px solid white;
 }
 
 ul.itemListSideBar > li.item .label {
@@ -168,4 +173,50 @@ ul.itemListSideBar > li.item .userInfo  > .addrValue {
     display: none;
   }
 }
+
+
+/**
+  *
+  */
+.itemLabelSelected {
+  background-color: white;
+  color: black;
+  padding: 10px 15px 10px 35px !important;
+  border-top-right-radius: 14px;
+  border-bottom-right-radius: 14px;
+  margin-left: -20px;
+}
+
+
+
+.icon-livraison {
+  background-image: url('/assets/imgs/icons/icon-livraison.png');
+}
+.icon-coursier {
+  background-image: url('/assets/imgs/icons/icon-coursier.png');
+}
+.icon-restaurant {
+  background-image: url('/assets/imgs/icons/icon-restaurant.png');
+}
+.icon-info {
+  background-image: url('/assets/imgs/icons/info.png');
+}
+.icon-calendrier {
+  background-image: url('/assets/imgs/icons/calendrier.png');
+}
+.icon-favori {
+  background-image: url('/assets/imgs/icons/favori.png');
+}
+.icon-off {
+  background-image: url('/assets/imgs/icons/off.png');
+}
+.icon-aide {
+  background-image: url('/assets/imgs/icons/aide.png');
+}
+
+
+
+
+
+
 

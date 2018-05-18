@@ -21,6 +21,8 @@ import SearchResultPage from './Pages/SearchResult'
 import OrderTrackingPage from './Pages/OrderTracking'
 import ProfilCustomerPage from './Pages/Profil/Customer'
 import ProfilAgentPage from './Pages/Profil/Agent'
+import HistoryCustomerPage from './Pages/History/Customer'
+import HistoryAgentPage from './Pages/History/Agent'
 
 const TemplateView = ({children}) => (
   <div className="containerAppClient">
@@ -41,6 +43,8 @@ const Router = () => (
     <Route path="/app/order_tracking" component={OrderTrackingPage} />
     <Route path="/app/profil/customer" component={ProfilCustomerPage} />
     <Route path="/app/profil/agent" component={ProfilAgentPage} />
+    <Route path="/app/history/customer" component={HistoryCustomerPage} />
+    <Route path="/app/history/agent" component={HistoryAgentPage} />
     <Route component={PageNotFound} />
   </Switch>
 )
