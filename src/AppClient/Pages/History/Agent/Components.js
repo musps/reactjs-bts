@@ -39,11 +39,18 @@ const HPContent = ({left, right}) => (
   </div>
 )
 
-const CourseDetail = ({children}) => (
-  <div className='courseDetail'>
-    {children}
-  </div>
-)
+const CourseDetail = ({isItem, children}) => {
+  const cls = classNames({
+    courseDetail: true,
+    isItem: isItem
+  })
+
+  return (
+    <div className={cls}>
+      {children}
+    </div>
+  )
+}
 
 const CDHeader = ({date, number}) => (
   <div className='cd-header'>
@@ -261,12 +268,25 @@ const CDAgentInfo = ({agentFullName}) => (
   </div>
 )
 
+export const NoResultItem = ({criteria}) => (
+  <div className='noResultItem'>
+    <p>
+      «{criteria}»
+      <br />
+      ne correspond à aucune de votre commande. 
+    </p>
+    <div className='iconDoOrder'>
+      <div className='icon'></div>
+    </div>
+  </div>
+)
+
 /**
   * END CONTENT LEFT
   */
 
-const ContentRight = () => (
-  <CourseDetail>
+const ContentRight = ({isItem}) => (
+  <CourseDetail isItem={isItem}>
     <CDHeader date='Vendredi 5 Avril 2018' number='DJ0515' />
     <CDProducts
       ticket={<Ticket />}
@@ -282,11 +302,19 @@ const ContentRight = () => (
   </CourseDetail>
 )
 
-const HistoryAgentComponent = ({items}) => (
-  <HistoryPage>
-    <HPTitle title='Historique des commandes' />
-    <HPContent left={<ContentLeft items={items} />} right={<ContentRight />} />
-  </HistoryPage>
-)
+const HistoryAgentComponent = ({items, isItem}) => {
+  const _isItem = ! (items.props.children[2].length > 0)
+
+  return (
+    <HistoryPage>
+      <HPTitle title='Historique des commandes' />
+      <HPContent left={<ContentLeft
+        items={items} />} 
+        right={<ContentRight 
+          isItem={_isItem} 
+        />} />
+    </HistoryPage>
+  )
+}
 
 export default HistoryAgentComponent

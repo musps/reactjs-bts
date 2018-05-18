@@ -1,7 +1,8 @@
 import React, { Component, Fragment  } from 'react';
 import HistoryAgentComponent, {
   HistoryItem,
-  SearchBar
+  SearchBar,
+  NoResultItem
 } from './Components'
 
 
@@ -78,13 +79,18 @@ class HistoryCustomerPage extends Component {
   }
 
   renderItems () {
+    const _items = this.state.fakeItems.filter(this.filterItems)
+
     return (
       <Fragment>
-        <SearchBar 
+        <SearchBar
           criteria={this.state.criteria}
           onChange={this.onCriteriaChange}
         />
-        {this.state.fakeItems.filter(this.filterItems).map((item) =>
+        {_items.length === 0 &&
+          <NoResultItem criteria={this.state.criteria} />
+        }
+        {_items.map((item) =>
           <HistoryItem key={item.id}
             title={item.title}
             shop={item.shop}

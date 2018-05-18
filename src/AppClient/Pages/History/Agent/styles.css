@@ -148,4 +148,34 @@
   background-image: url('/assets/imgs/icons/calendar.png');
 }
 
+.courseDetail.isItem {
+  display: none !important;
+}
 
+@media screen and (max-width: 900px) {
+  .hp-c-searchBar {
+    padding: 20px 10px !important;
+  }
+}
+
+.noResultItem {
+
+}
+
+.noResultItem > p {
+  font-size: 24px;
+  color: black;
+}
+
+.iconDoOrder {
+
+}
+
+.iconDoOrder > .icon {
+  background-image: url('/assets/imgs/icons/shopping-bag.png');
+  width: 120px;
+  height: 120px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
