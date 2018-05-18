@@ -77,6 +77,9 @@
   font-size: 18px;
   color: #2c2c2c;
   padding: 0 7px;
+  width: 94px;
+  min-width: 94px;
+  text-align: right;
 }
 
 .lt-priceInfo {
@@ -103,4 +106,46 @@
   color: #2c2c2c;
   font-size: 24px;
   margin: 0 5px;
+  cursor: pointer;
 }
+
+.itemContent > h1:hover {
+  text-decoration: underline;
+}
+
+/**
+  * SearchBar
+  */
+
+.hp-c-searchBar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 20px 40px;
+  align-items: center;
+}
+
+.hp-c-searchBar > .searchBarInput {
+  flex-grow: 1;
+  color: #262626;
+  font-size: 18px;
+  padding: 10px 20px;
+  border: 0;
+  height: 46px;
+  box-shadow: 1px 1px 4px rgba(85, 85, 85, 0.3);
+}
+
+.hp-c-searchBar > .icon {
+  margin: 0 0 0 20px;
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.icon-calendar {
+  background-image: url('/assets/imgs/icons/calendar.png');
+}
+
+

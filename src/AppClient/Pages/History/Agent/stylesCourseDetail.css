@@ -334,6 +334,8 @@
 .cd-agentInfo > .cd-ai-agent > .icon-agent {
   width: 90px;
   height: 90px;
+  min-width: 90px;
+  min-height: 90px;
   border: 2px solid black;
   border-radius: 50%;
 }
@@ -398,6 +400,82 @@
   text-align: left;
 }
 
+
+@media screen and (max-width: 900px) {
+  .hp-content {
+    flex-direction: column !important;
+  }
+
+  .cd-header {
+    flex-direction: column !important;
+    align-items: self-start !important;
+  }
+
+  .cd-header > h1 {
+    margin-bottom: 0;
+  }
+
+  .cd-header > label {
+    margin-bottom: 20px;
+  }
+
+  .hp-c-left,
+  .hp-c-right {
+    width: 100% !important;
+  }
+
+  .cd-products {
+    flex-direction: column !important;
+  }
+
+  .cd-p-detail {
+    order: 1;
+    width: 100% !important;
+  }
+
+  .cd-p-ticket {
+    order: 2;
+    width: 100% !important;
+  }
+
+  .cd-deliveryInfo > .left {
+    width: 100%;
+  }
+  .cd-deliveryInfo > .right {
+    display: none;
+  }
+
+  .cd-deliveryMapAndAddrs {
+    flex-direction: column !important;
+  }
+
+  .cd-deliveryMapAndAddrs > .map {
+    order: 2;
+    width: 100% !important;
+  }
+
+  .cd-deliveryMapAndAddrs > .addrs {
+    order: 1;
+    width: 100% !important;
+    flex-direction: row !important;
+  }
+
+  .cd-deliveryMapAndAddrs > .addrs > .addr {
+    width: 50% !important;
+  }
+
+  .cd-agentInfo {
+    flex-direction: column !important;
+  }
+
+  .cd-agentInfo > .cd-ai-agent {
+    width: 100% !important;
+  }
+
+  .cd-agentInfo > .cd-ai-contact {
+    width: 100% !important;
+  }
+}
 
 
 

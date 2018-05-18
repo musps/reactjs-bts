@@ -15,6 +15,19 @@ const HPTitle = ({title}) => (
   </div>
 )
 
+export const SearchBar = ({criteria, onChange}) => (
+  <div className='hp-c-searchBar'>
+    <input
+      className='searchBarInput'
+      type='text'
+      placeholder='Recherche rapide'
+      value={criteria}
+      onChange={onChange}
+      />
+    <div className='icon icon-calendar'></div>
+  </div>
+)
+
 const HPContent = ({left, right}) => (
   <div className='hp-content'>
     <div className='hp-c-left'>
@@ -114,13 +127,10 @@ const Detail = ({bc}) => (
   </div>
 )
 
-const ContentLeft = () => (
+const ContentLeft = ({items}) => (
   <div className='contentLeft'>
     <HistoryList>
-      <HistoryItem isSelected={false} />
-      <HistoryItem isSelected={true} />
-      <HistoryItem isSelected={false} />
-      <HistoryItem isSelected={false} />
+      {items}
     </HistoryList>
   </div>
 )
@@ -129,7 +139,7 @@ const ContentLeft = () => (
   * CONTENT LEFT
   */
 
-const HistoryItem = ({isSelected}) => {
+export const HistoryItem = ({title, shop, date, price, isSelected, onClickSelected}) => {
   const cls = classNames({
     historyItem: true,
     isSelected: isSelected
@@ -142,7 +152,13 @@ const HistoryItem = ({isSelected}) => {
       </div>
 
       <div className='itemContent'>
-        <HTContent name='Banane violette avec tâche' />
+        <HTContent
+          onClickSelected={onClickSelected}
+          title={title}
+          shop={shop}
+          date={date}
+          price={price}
+        />
       </div>
 
       <div className='itemImage'>
@@ -152,19 +168,19 @@ const HistoryItem = ({isSelected}) => {
   )
 }
 
-const HTContent = ({name}) => (
+const HTContent = ({title, shop, date, price, onClickSelected}) => (
   <Fragment>
-    <h1>{name}</h1>
+    <h1 onClick={onClickSelected}>{title}</h1>
     <div className='shop'>
       <div className='icon'></div>
-      <label className='label'>Auchan</label>
+      <label className='label'>{shop}</label>
     </div>
     <div className='tt'>
       <div className='date'>
-        05/04/2018  10:30
+        {date}
       </div>
       <div className='price'>
-        18,04 €
+        {price}
       </div>
     </div>
     <div>
@@ -266,10 +282,10 @@ const ContentRight = () => (
   </CourseDetail>
 )
 
-const HistoryAgentComponent = () => (
+const HistoryAgentComponent = ({items}) => (
   <HistoryPage>
     <HPTitle title='Historique des commandes' />
-    <HPContent left={<ContentLeft />} right={<ContentRight />} />
+    <HPContent left={<ContentLeft items={items} />} right={<ContentRight />} />
   </HistoryPage>
 )
 
